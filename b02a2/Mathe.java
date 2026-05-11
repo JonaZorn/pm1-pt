@@ -20,5 +20,11 @@ public class Mathe{
         } 
         return 1;
     }
-
+        public static void quadrateAusgabe(int n) {
+        int i = n;
+        while (i >= 1) {
+        System.out.println(i * i);
+        i = i - 1;
+        }
+    }
 }
