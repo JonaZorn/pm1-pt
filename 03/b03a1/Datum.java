@@ -36,11 +36,14 @@ public class Datum{
             return "Das Jahr "+ j +" ist ein Jahr im Gregorianischer Kalender";
         }
         return "Das Jahr "+ j +" ist ein Jahr im Gregorianischer Kalender";
-    }
-
+    } 
 //b
      public static String istSchaltjahrB(int j){
         boolean istSchaltjahrB = (j < 1583 && j % 4 == 0) || (j >= 1583 && (j % 400 == 0 || (j % 4 == 0 && j % 100 != 0)));
+        return "Das Jahr " + j + (istSchaltjahrB ? " ist ein Schaltjahr" : " ist kein Schaltjahr");
+    }
+    public static String istSchaltjahrLösung(int j){
+        boolean istSchaltjahrB = j % 4 == 0 & (j < 1583 || j % 400 == 0 || j % 100 != 0);
         return "Das Jahr " + j + (istSchaltjahrB ? " ist ein Schaltjahr" : " ist kein Schaltjahr");
     }
     
@@ -56,7 +59,6 @@ public class Datum{
                     } else {
                     return "Das Jahr "+ j +" ist ein Jahr im Gregorianischer Kalender";
                 } 
-        } 
-       
+            } 
     }
 }

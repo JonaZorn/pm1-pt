@@ -3,6 +3,7 @@ public class DatumTest{
     System.out.println(Datum.istSchaltjahr(1583));
     System.out.println(Datum.istSchaltjahrA(1583));
     System.out.println(Datum.istSchaltjahrB(2000));
+    System.out.println(Datum.istSchaltjahrLösung(2001));
     System.out.println(Datum.istSchaltjahrC(2001));
     }
 }

@@ -8,7 +8,7 @@ public class EingabeTest {
         "Beenden das Programms mit Strg+d und dann Enter\n"
         );
         
-        System.out.println("Bitte verwenden Sie ',' statt '.'."); // Konsolenausgabe in grün für den Hinweise das , statt . verwendet werden soll
+        System.out.println("Bitte verwenden Sie ',' statt '.'.");
         System.out.println("Geben Sie Gleitkommazahlen ein: ");
         double ergebnis = Felix.durchschnitt(sc);
         System.out.println("Durchschnitt: " + ergebnis);
