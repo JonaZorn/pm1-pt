@@ -7,10 +7,10 @@ public class MatheBug {
       min = b;
     }
     if (c < min) {
-      min = b;
+      min = c;
     }
     if (d < min) {
-      min = c;
+      min = d;
     }
     return min;
   }

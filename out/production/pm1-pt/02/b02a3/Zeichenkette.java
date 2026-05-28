@@ -14,19 +14,19 @@ public class Zeichenkette {
             return ausgabe;
         }
     }
-    //Altervatieve
-    return "Guten " + (u < 12 ? "Morgen, ": 
-            (u < 18 ? "Tag, ": "Abend, ")) + "name" + "!";
-
     public static String zitronenEis(int n){
         String l = "leckeres ";
         String e = "Zitroneneis";
+        String s = "";
+        String z = "";
+        String r = "";
         int i = 0;
         while (i < n) {
-            z = "Z" + e;
-            s = "super" + l;
+            z = z + "Z";
+            s = s + "super";
+            r = s + l + z + e;
             i = i + 1;
             }
-        return s + z;
+        return r;
     }
 }
