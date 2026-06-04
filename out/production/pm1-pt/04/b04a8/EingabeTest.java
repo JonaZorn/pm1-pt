@@ -4,7 +4,7 @@ public class EingabeTest {
         String text =         "/*\n" +
                               " * Programm: gibt \"Hi!\" aus\n" +
                               " */\n" +
-                              " Hi {\n" +
+                              "public class Hi {\n" +
                               "    public static void main(String[] args) {\n" +
                               "        // Ausgabe der Nachricht\n" +
                               "        System.out.println(\"Hi!\");\n" +

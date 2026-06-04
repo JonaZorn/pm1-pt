@@ -1,0 +1,28 @@
+5.1)
+Die lexikalische Ebene ist der Aufbau von Quelltext. Unterschieden wird in:
+- Zeichen, bestehend aus ASCII-Zeichen. Sonderzeichengehen in:
+	-Kommentar 
+	-Zeichenkette 
+	-Bezeichner 
+- Token, wie:
+	-White Space
+	-Kommentare
+- Token - Wörter, wie:
+	-Schlüsselwörter: public, class, int
+	-Separatoren: {, }, ; 
+	-Operatoren: =, +, +=, ?, : 
+- Syntax/ Grammatik
+
+Gültige Beispiele zu Zahlen:
+	-05
+	-123
+	-3_5_6
+	-1_234_455_566
+
+Ungültige Beispiele:
+	-013
+	-1_
+	-_123
+
+Beschreibung in eigenen Worten: 
+In Java dienen Tokens wie „_“ als visuelle Trennung und haben keinen Einfluss auf den Zahlenwert. Dezimalzahlen dürfen laut der Java-Sprachspezifikation so geschrieben werden. Entweder als einzelne "0" oder sie beginnt mit einer Ziffer von 1 bis 9 und muss mit einer Ziffer enden. Sie dürfen kein führendes Nullen enthalten, wie 064. Ebenso dürfen Unterstriche nicht am Anfang oder am Ende der Zahl stehen, also nicht _75 oder 91_.

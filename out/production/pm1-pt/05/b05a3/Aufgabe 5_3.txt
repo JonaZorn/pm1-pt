@@ -1,0 +1,34 @@
+5.3)
+Startstationen:
+    Startbahnhof "ab" Uhrzeit
+
+Zwischenstation:
+    Zwischenstation "an" Uhrzeit "ab" Uhrzeit [ Gleisangabe ]
+
+Endtstation:
+    Endbahnhof "an" Uhrzeit [ Gleisangabe ]
+
+Gleisangabe:
+    "Gleis" Gleisnummer
+
+
+Lexikalische Regelen:
+(Leerzeichen nur als visuelle Trennung)
+-Station:
+	Großbuchstabe{Buchstabe}
+-Uhrzeit:
+	Ziffer Ziffer : Ziffer Ziffer
+-Gleisnummer:
+	Text{Zahl}
+
+Syntaktische Regelen:
+-Fahrplan:
+	Startbahnhof { Zwischenstation } Endbahnhof
+-Startbahnhof:
+	Ort ab Uhrzeit
+-Zwischenstation:
+	Ort an Uhrzeit ab Uhrzeit [ Gleisangabe ]
+-Endbahnhof:
+	Ort an Uhrzeit [ Gleisangabe ]
+-Gleisangabe:
+	Gleis Gleisnummer
