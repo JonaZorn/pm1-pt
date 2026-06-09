@@ -18,6 +18,7 @@ Gültige Beispiele zu Zahlen:
 	-123
 	-3_5_6
 	-1_234_455_566
+	-123____________456
 
 Ungültige Beispiele:
 	-013

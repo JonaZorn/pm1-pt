@@ -4,10 +4,10 @@ public class Datum {
     private static char zeichen = '-';
     
     public Datum(){
-        this(1,1,1);
+        this(1);
     }
     public Datum(int jahr){
-        this(jahr, 1, 1);
+        this(jahr, 1);
     }
     public Datum(int jahr, int monat){
         this(jahr, monat, 1);
@@ -33,25 +33,29 @@ public class Datum {
         return jahr == d.jahr && monat == d.monat && tag == d.tag;
     }
     public boolean istFrueher(Datum d) {
-        if (jahr != d.jahr) return jahr < d.jahr;
-        if (monat != d.monat) return monat < d.monat;
+        if (jahr != d.jahr){ 
+            return jahr < d.jahr;
+        }
+        if (monat != d.monat){
+            return monat < d.monat;
+        }
         return tag < d.tag;
     }
     public String toString(){
         String j = "" + jahr;
         String m = (monat < 10 ? "0" : "") + monat;
         String t = (tag < 10 ? "0" : "") + tag;
-        String ausgabe = "";
         if(folge.equals("jmt")){
-            ausgabe = j + zeichen + m + zeichen + t;
+            return = j + zeichen + m + zeichen + t;
         } else if (folge.equals("tmj")){
-            ausgabe = t + zeichen + m + zeichen + j;
+            return = t + zeichen + m + zeichen + j;
         } else {
-            ausgabe = m + zeichen + t + zeichen + j;
+            return = m + zeichen + t + zeichen + j;
         }
-        return ausgabe;
     }
-    public static void setFormatRF(String rf) { folge = rf; }
-    public static void setFormatTZ(char tz) { zeichen = tz; }
+    public static void setFormatRF(String rf) { 
+        Datum.rf = rf; }
+    public static void setFormatTZ(char tz) { 
+        Datum.tz = tz; }
     }
 

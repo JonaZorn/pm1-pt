@@ -25,7 +25,7 @@ Syntaktische Regelen:
 -Fahrplan:
 	Startbahnhof { Zwischenstation } Endbahnhof
 -Startbahnhof:
-	Ort ab Uhrzeit
+	Ort ab Uhrzeit [ Gleisangabe ]
 -Zwischenstation:
 	Ort an Uhrzeit ab Uhrzeit [ Gleisangabe ]
 -Endbahnhof:

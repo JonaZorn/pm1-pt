@@ -1,3 +1,4 @@
+
 public class RationalTest {
     public static void main(String[] args) {
         Rational r1 = new Rational(28, 35);  // 4/5

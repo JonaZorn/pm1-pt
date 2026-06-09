@@ -3,30 +3,19 @@ public class Rational {
     private int nenner;
 
     public Rational(){
-        this(0, 1);
+        this(0);
     }
-    public Rational(int zaehler){
+    public Rational(int z){
         this(zaehler, 1);
     }
-    public Rational(int zaehler, int nenner){
-        if(nenner < 0){
-            zaehler = -zaehler;
-            nenner = -nenner;
+    public Rational(int z, int n){
+        if(n < 0){
+            z = -z;
+            n = -n;
         }
-        int g = ggT(zaehler, nenner);
-        this.zaehler = zaehler / g;
-        this.nenner = nenner / g;
-    }
-    private static int ggT(int a, int b){
-        if (a < 0){
-            a = -a;
-        }
-        while (b > 0) {
-            int t = a % b;
-            a = b;
-            b = t;
-        }
-        return a;
+        int g = Mathe.ggT(Math.abs(z), n)
+        zaehler = z / g;
+        nenner = n / g;
     }
     public Rational(Rational r){
         this(r.zaehler, r.nenner);
@@ -44,7 +33,7 @@ public class Rational {
         return zaehler * r.nenner < r.zaehler * nenner;
     }
     public Rational abs(){
-        return new Rational(zaehler < 0 ? - zaehler : zaehler, nenner);
+        return new Rational(Math.abs(zaehler), nenner);
     }
     public Rational rez(){
         return new Rational(nenner, zaehler);
