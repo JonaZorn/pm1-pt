@@ -43,6 +43,8 @@ public class Datum {
     }
      
 
+
+    
     public String nameFuerMonat(Datum d){
         String[] mn ={"Januar",  "Februar", "Maerz", "April", "Mai", "Juni", "Juli", 
              "August", "September", "Oktober", "November", "Dezember"};
@@ -83,6 +85,36 @@ public class Datum {
             return  m + zeichen + t + zeichen + j;
         }
     } 
+
+
+
+    //ist neu
+    public boolean istSchaltjahr(Datum d){
+        return jahr % 4 == 0 & (jahr < 1583 || jahr % 400 == 0 || jahr % 100 != 0);    
+    }
+
+    public int tageInMonat(Datum d) {
+    if (monat < 1 || monat > 12) {
+        throw new IllegalArgumentException("ungueltiger Wert fuer Monat: " + monat);
+    }
+    if (jahr < 1) {
+        throw new IllegalArgumentException("ungueltiger Wert fuer Jahr: " + jahr);
+    }
+
+    boolean schaltjahr = jahr % 4 == 0 && (jahr < 1583 || jahr % 400 == 0 || jahr % 100 != 0);
+
+    if (monat == 2) {
+            return schaltjahr ? 29 : 28;
+        } else if (monat == 4 || monat == 6 || monat == 9 || monat == 11) {
+            return 30;
+        } else {
+            return 31;
+        }
+    }
+
+
+
+
 
     public static void setFormatRF(String rf) { 
         Datum.folge = rf; 

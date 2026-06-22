@@ -13,11 +13,21 @@ public class MatheTest {
         System.out.println(Mathe.mulLoop(3, 2));
         System.out.println(Mathe.mulLoop(-3, 2));
         System.out.println(Mathe.mulLoop(3, -2));
-        System.out.println(Mathe.mulLoop(-3, -2));*/
+        System.out.println(Mathe.mulLoop(-3, -2));
 
-        System.out.println(Mathe.difLoop(6, 2));
-        System.out.println(Mathe.difLoop(-6, 2));
-        System.out.println(Mathe.difLoop(6, -2));
-        System.out.println(Mathe.difLoop(-6, -2));
+        System.out.println(Mathe.divLoop(6, 2));
+        System.out.println(Mathe.divLoop(-6, 2));
+        System.out.println(Mathe.divLoop(6, -2));
+        System.out.println(Mathe.divLoop(-6, -2));
+
+        System.out.println(Mathe.modLoop(7, 2));
+        System.out.println(Mathe.modLoop(7, -2));
+        System.out.println(Mathe.modLoop(-7, 2));
+        System.out.println(Mathe.modLoop(-7, -2));*/
+
+        System.out.println(Mathe.powLoop(4, 2));
+        System.out.println(Mathe.powLoop(4, -2));
+        System.out.println(Mathe.powLoop(-4, 2));
+        System.out.println(Mathe.powLoop(-4, -2));
     }
 }

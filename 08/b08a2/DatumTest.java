@@ -4,8 +4,8 @@ public class DatumTest {
         // Objekte erstellen
         Datum d1 = new Datum();
         Datum d2 = new Datum(2026);
-        Datum d3 = new Datum(2026, 3);
-        Datum d4 = new Datum(2026, 9, 8);
+        Datum d3 = new Datum(2000, 2);
+        Datum d4 = new Datum(2000,12, 8);
         Datum d5 = new Datum(d4); // Kopie
 
         // Ausgabe Standard-Format
@@ -16,7 +16,7 @@ public class DatumTest {
         System.out.println(d4.toString()); // 08-03-2026
 
         // Trennzeichen ändern
-        Datum.setFormatTZ('.');
+        Datum.setFormatTZ('0');
         System.out.println(d4.toString()); // 08/03/2026
 
         // Vergleiche
@@ -25,5 +25,7 @@ public class DatumTest {
 
         System.out.println(d4.nameFuerMonat(d4));
         System.out.println(Datum.monatFuerName("April"));
+        System.out.println(d5.istSchaltjahr(d2));
+        System.out.println(d4.tageInMonat(d4));
     }
 }

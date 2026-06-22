@@ -1,18 +1,4 @@
 public class Mathe {
-   /** public static int addLoop(int a, int b) {
-        if(a > 0 & b > 0 | a < 0 & b > 0){
-            while(b != 0){
-                a++;
-                b--;
-            }
-        } if(a < 0 & b < 0 | a > 0 & b < 0) {
-            while (b != 0){
-                a--;
-                b++;
-            }
-        }
-    return a;
-    }
     public static int addLoop(int a, int b) {
         while (a > 0) {
             ++b;
@@ -25,8 +11,6 @@ public class Mathe {
         }
         return b;
     }
-
-
 
     public static int subLoop(int a, int b) {
         while (b > 0) {
@@ -41,22 +25,8 @@ public class Mathe {
         return a;
     }
 
-
-
-    public static int addLoop(int a, int b) {
-        while (a > 0) {
-            ++b;
-            --a;
-        }
-
-        while (a < 0) {
-            --b;
-            ++a;
-        }
-        return b;
-    }
     public static int mulLoop(int a, int b) {
-        boolean p = ( a < 0 ) == ( b < 0 ); // Vorzeichen ermitteln
+        boolean p = ( a < 0 ) == ( b < 0 );
         if (a < 0) {
             a = -a;
         }
@@ -72,31 +42,7 @@ public class Mathe {
         return p ? e : -( e );
     }
 
-
-
-    public static int addLoop(int a, int b) {
-        while (a > 0) {
-            ++b;
-            --a;
-        }
-
-        while (a < 0) {
-            --b;
-            ++a;
-        }
-        return b;
-    }
-    public static int subLoop(int a, int b) {
-        if (b < 0) {
-            return addLoop(a, -b);
-        }
-        while (b != 0) {
-            a--;
-            b--;
-        }
-        return a;
-    }
-    public static double difLoop(int a, int b) {
+    public static int divLoop(int a, int b) {
         boolean p = (a < 0) == (b < 0); 
         if (a < 0) {
             a = -a;
@@ -110,5 +56,31 @@ public class Mathe {
             e++;
         }
         return p ? e : -( e );
-    }*/
+    }
+    
+
+    public static int modLoop(int a, int b) {
+        boolean p = (a < 0) == (b < 0); 
+        if (a < 0) {
+            a = -a;
+        }
+        if (b < 0) {
+            b = -b;
+        }
+        int e = 0;
+        while(a >= b) {
+            a = subLoop(a, b);
+        }
+        return p ? a : -a;
+    }
+
+    public static int powLoop(int a, int b) {
+        int c = 0;
+        int e = 1;
+        while( c < b ) {
+            e = mulLoop( e, a );
+            c++;
+        }
+        return (e <= 1 ? 0 : e);
+    }
 }
