@@ -1,7 +1,7 @@
 public class StromvertragOeko extends Stromvertrag {
     private static int anzahl = 0;
-    private static final int fr = 1200;     // Cent pro Monat
-    private static final int pkws = 35;     // Cent pro kWh
+    private static final int fr = 1200;
+    private static final int pkws = 35;
 
     public StromvertragOeko(String name, int monat, int zaehler) {
         super(name, monat, zaehler);
