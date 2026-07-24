@@ -52,14 +52,39 @@ public class Datum {
              return mn[aus];
     }
     public static int monatFuerName(String mfn){
-        String[] mn ={"Januar",  "Februar", "Maerz", "April", "Mai", "Juni", "Juli", 
-                      "August", "September", "Oktober", "November", "Dezember"};
+        switch(mfn){
+            case "Januar":
+                return 1;
+            case "Februar":
+                return 2;
+            case "Maerz":
+                return 3;
+            case "April":
+                return 4;
+            case "Mai":
+                return 5;
+            case "Juni":
+                return 6;
+            case "Juli":
+                return 7;
+            case "August":
+                return 8;
+            case "September":
+                return 9;
+            case "Oktober":
+                return 10;
+            case "November":
+                return 11;
+            case "Dezember":
+                return 12;
+        }
+
+        String[] mn ={};
         int a = 0;        
         while (a < mn.length && !mfn.equals(mn[a])) {
             a++;
         } 
-        a = a + 1;
-        return a;
+        return a++;
     }
     public String toString(){
         String j = "" + jahr;
@@ -89,33 +114,37 @@ public class Datum {
 
 
     //ist neu
-    public boolean istSchaltjahr(Datum d){
-        return jahr % 4 == 0 & (jahr < 1583 || jahr % 400 == 0 || jahr % 100 != 0);    
+    public int istSchaltjahr(Datum d){
+        boolean jn = jahr % 4 == 0 & (jahr < 1583 || jahr % 400 == 0 || jahr % 100 != 0);    
+
+        switch(monat){
+            case 1:
+                return 31;
+            case 2:
+                return (jn ? 29 : 28);
+            case 3:
+                return 31;
+            case 4:
+                return 30;
+            case 5:
+                return 31;
+            case 6:
+                return 30;
+            case 7:
+                return 31;
+            case 8:
+                return 31;
+            case 9:
+                return 30;
+            case 10:
+                return 31;
+            case 11:
+                return 30;
+            case 12:
+                return 31;
+        }   
     }
-
-    public int tageInMonat(Datum d) {
-    if (monat < 1 || monat > 12) {
-        throw new IllegalArgumentException("ungueltiger Wert fuer Monat: " + monat);
-    }
-    if (jahr < 1) {
-        throw new IllegalArgumentException("ungueltiger Wert fuer Jahr: " + jahr);
-    }
-
-    boolean schaltjahr = jahr % 4 == 0 && (jahr < 1583 || jahr % 400 == 0 || jahr % 100 != 0);
-
-    if (monat == 2) {
-            return schaltjahr ? 29 : 28;
-        } else if (monat == 4 || monat == 6 || monat == 9 || monat == 11) {
-            return 30;
-        } else {
-            return 31;
-        }
-    }
-
-
-
-
-
+    
     public static void setFormatRF(String rf) { 
         Datum.folge = rf; 
     }
@@ -123,4 +152,3 @@ public class Datum {
         Datum.zeichen = tz; 
     }
 }
-

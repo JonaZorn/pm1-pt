@@ -4,7 +4,7 @@ public class DatumTest {
         // Objekte erstellen
         Datum d1 = new Datum();
         Datum d2 = new Datum(2026);
-        Datum d3 = new Datum(2000, 2);
+        Datum d3 = new Datum(2000, 3);
         Datum d4 = new Datum(2000,12, 8);
         Datum d5 = new Datum(d4); // Kopie
 
@@ -26,6 +26,6 @@ public class DatumTest {
         System.out.println(d4.nameFuerMonat(d4));
         System.out.println(Datum.monatFuerName("April"));
         System.out.println(d5.istSchaltjahr(d2));
-        System.out.println(d4.tageInMonat(d4));
+        System.out.println(d4.tageInMonat(d5));
     }
 }

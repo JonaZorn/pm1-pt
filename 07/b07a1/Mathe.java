@@ -1,45 +1,26 @@
 public class Mathe {
     public static int addLoop(int a, int b) {
-        while (a > 0) {
-            ++b;
-            --a;
+        if (b < 0){
+            return -addLoop(-a, -b);
         }
-
-        while (a < 0) {
-            --b;
-            ++a;
-        }
-        return b;
-    }
-
-    public static int subLoop(int a, int b) {
         while (b > 0) {
             --b;
-            --a;
-        }
-
-        while (b < 0) {
-            ++b;
             ++a;
         }
         return a;
     }
 
+    public static int subLoop(int a, int b) {
+        return addLoop (a, -b);
+    }
+
     public static int mulLoop(int a, int b) {
-        boolean p = ( a < 0 ) == ( b < 0 );
-        if (a < 0) {
-            a = -a;
+        int r = 0;
+        if (b < 0){
+            return mulLoop(-a, -b);
         }
-        if (b < 0) {
-            b = -b;
-        }
-        int c = 0;
-        int e = 0;
-        while( c < b ) {
-            e = addLoop( e, a );
-            ++c;
-        }
-        return p ? e : -( e );
+        for(int i = 0; i < b; ++i) addLoop(r, b);
+        return r;
     }
 
     public static int divLoop(int a, int b) {

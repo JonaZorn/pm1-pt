@@ -52,21 +52,23 @@ public class DynFeldVonInt {
         f = n;
     }
 
-    public boolean equals(DynFeldVonInt other){
+    public boolean equals(DynFeldVonInt other){/*
         if (other == null) throw new NullPointerException();
         if (f.length != other.f.length) return false;
         for (int i = 0; i < f.length; i++){
             if (f[i] != other.f[i]) return false;
         }
-        return true;
+        return true;*/
+        return java.util.Arrays.equals(f, other.f)
     }
 
-    public String toString(){
+    public String toString(){/*
         String s = "[";
         for (int i = 0; i < f.length; i++){
             s += f[i];
             if (i + 1 < f.length) s += ",";
         }
-        return s + "]";
+        return s + "]";*/
+        return java.util.Arrays.toString(f);
     }
 }

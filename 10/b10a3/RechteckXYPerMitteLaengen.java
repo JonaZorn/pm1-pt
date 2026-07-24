@@ -28,9 +28,8 @@ public final class RechteckXYPerMitteLaengen extends FigurPerMitte {
     }
 
     public Punkt2D ecke(boolean istRechts, boolean istOben) {
-        double x = mitte().x() + (istRechts ? breite / 2 : -breite / 2);
-        double y = mitte().y() + (istOben ? tiefe / 2 : -tiefe / 2);
-        return new Punkt2D(x, y);
+        return mitte().verschiebe((istRechts ? breite : -breite ) / 2,
+                                  (istOben ? tiefe : -tiefe) / 2);
     }
 
     @Override
@@ -76,8 +75,6 @@ public final class RechteckXYPerMitteLaengen extends FigurPerMitte {
 
     @Override
     public String toString() {
-        Punkt2D lup = ecke(false, false);
-        Punkt2D rop = ecke(true, true);
-        return "[" + lup + "," + rop + "]";
+        return "[" + ecke(false, false) + "," + ecke(true, true) + "]";
     }
 }

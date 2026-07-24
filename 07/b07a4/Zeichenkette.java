@@ -14,7 +14,9 @@ import java.util.Scanner;
             return true;
         }
         
-        public static boolean istPalindromRek(String s, int l, int r) {
+
+        
+        private static boolean istPalindromRek(String s, int l, int r) {
             if (l >= r) return true;
             if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) {
                 return false;

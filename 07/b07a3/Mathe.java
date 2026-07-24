@@ -49,4 +49,16 @@ public class Mathe {
         }
         return mulLoop(a, powRek(qu, b / 2));
     }
+
+    //lösung
+    public static int powRek(int a, int b) {
+        return powRek(a, b, 1);
+    }
+    private static int powRek(int a, int b, int c) {
+        if (b == 0) return 1;
+        if (b % 2 == 0) {
+            return powRek(a * a, b / 2, c);
+        }
+        return powRek(a * a, b / 2,c * a);
+    }
 }

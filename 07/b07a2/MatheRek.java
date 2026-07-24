@@ -3,26 +3,27 @@ public class MatheRek {
         if (a == 0){
             return b;
         }
-        a--;
-        b++;
-        return addRek(a, b);
+        return addRek(--a, ++b);
     }
 
     public static int subRek(int a, int b) {
         if (b == 0){
             return a;
         }
-        a--;
-        b--;
-        return subRek(a, b);
+        return subRek(--a, --b);
     }
 
     public static int mulRek(int a, int b) {
+        if (b < 0){
+            return mulRekHelp(-a, -b);
+        }
+        return mulRekHelp(a, b);
+    }    
+    private static int mulRekHelp(int a, int b) {
         if (b == 0){
             return 0;
         }
-        b--;
-        return addRek(a, mulRek(a, b));
+        return addRek(a, mulRekHelp(a, --b));
     }
 
     public static int divRek(int a, int b) {
@@ -43,7 +44,6 @@ public class MatheRek {
         if (b == 0){
             return 1;
         }
-        b--;
-        return mulRek(a, powRek(a, b));
+        return mulRek(a, powRek(a, --b));
     }
 }
